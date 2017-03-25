@@ -3,12 +3,17 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class AthletesList {
-	private String[] subjects;
+	//private String[] subjects;
 	private ArrayList<Athletes> list;
+	private int num;
+	private double[] randomNo = new double[num];
+	private int Score;
 	//private String[] athleteType;
 	public AthletesList() {
 		
 		list = new ArrayList<Athletes>();
+		Score = 0;
+		num = 8;
 		//athleteType = new String[4];
 	}
 	//增加运动员信息
@@ -18,28 +23,63 @@ public class AthletesList {
 		list.add(info);
 	}
 	
-	//产生随机秒数
-	public int compete(String gameType)
+	//产生随机秒数。
+	public void compete(String gameType)
 	{
+		double temp = 0;
 		if (gameType.equalsIgnoreCase("running"))
 		{
-			int seconds = (int)(Math.random()*11) + 10;  //产生从10到20的随机数
-			return seconds;
+			for (int i = 0; i <= num; i++) //为了后面的排名创造存入数组
+			{
+				double seconds = (double)(Math.random()*11) + 10;  //产生从10到20的随机数
+				randomNo[i] = seconds;
+				if (randomNo[i] < randomNo[i+1])// 冒泡排序
+				{
+					temp = randomNo[i];
+			        randomNo[i] = randomNo[i+1];
+			        randomNo[i+1] = temp;
+				}
+			}
+			
 		}
 		else if (gameType.equalsIgnoreCase("swimming"))
 		{
-			int seconds = (int)(Math.random()*101) + 100;  //产生从100到200的随机数
-			return seconds;
+			for (int i = 0; i <= num; i++)
+			{
+				double seconds = (double)(Math.random()*101) + 100;  //产生从100到200的随机数
+				randomNo[i] = seconds;
+				if (randomNo[i] < randomNo[i+1])// 冒泡排序
+				{
+					temp = randomNo[i];
+			        randomNo[i] = randomNo[i+1];
+			        randomNo[i+1] = temp;
+				}
+			}
 		}
 		else if (gameType.equalsIgnoreCase("cycling"))
 		{
-			int seconds = (int)(Math.random()*301) + 500;  //产生从500到800的随机数
-			return seconds;
+			for (int i = 0; i <= num; i++)
+			{
+				double seconds = (double)(Math.random()*301) + 500;  //产生从500到800的随机数
+				randomNo[i] = seconds;
+				if (randomNo[i] < randomNo[i+1])// 冒泡排序
+				{
+					temp = randomNo[i];
+			        randomNo[i] = randomNo[i+1];
+			        randomNo[i+1] = temp;
+				}
+			}
 		}
 		else {
-			return 0;
+			System.out.println("no game");
 		}
 	}
+	/*
+	public String getScore()
+	{
+		return 
+	}
+	*/
 	//录入运动员信息
 	public void readInput()
 	{
