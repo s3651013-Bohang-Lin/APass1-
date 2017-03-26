@@ -7,12 +7,14 @@ public class Driver {
 	private int input;
 	private Scanner keyboard;
 	private ArrayList<Game> game;
+	private ArrayList<Athletes> ath;
 	private Game list;
 	private AthletesList athList;
 	public Driver()
 	{
 		 keyboard = new Scanner(System.in);
 		 game = new ArrayList<Game>();
+		 ath = new ArrayList<Athletes>();
 		 list = new Game();
 		 athList = new AthletesList();
 	}
@@ -83,6 +85,7 @@ public class Driver {
 
 	public void selectGame()
 	{
+		Athletes list = new Athletes("","",0,"","");
 		System.out.println("Please enter a game(swimming, cycling or running): ");
 		list.setName(keyboard.nextLine());
 		//while(searchGame(list.getName()))
@@ -90,7 +93,9 @@ public class Driver {
 			//list.setName(keyboard.nextLine());
 		//}
 		//game.add(list);
-		System.out.println("");
+		System.out.println("Do you want enrol new Athletes (Yes or No): ");
+		String judge = keyboard.nextLine();
+		if (judge.equalsIgnoreCase("Yes")){
 		System.out.println("Please enter the number of " + list.getName() + " Athletes: ");
 		int num = keyboard.nextInt();
 		int[] arr = new int[num];
@@ -98,27 +103,35 @@ public class Driver {
 		String[] name = new String[num]; //存放姓名的
 		int[] age = new int[num];//存放年龄
 		String[] state = new String[num];//存放国家
-		String ID = "";
-		String names = "";
-		int ages = 0;
-		String states = "";
-		for(int i = 0; i < id.length && i < name.length && i < age.length && i < state.length; i++)
-		{
-			
-			Athletes list = new Athletes("","",0,"","");
+		String[] type = new String[num];//存放运动员种类 
 
-			System.out.println("Please enter " + (arr[i]+1) + "athlete unique ID: "); 
+		for(int i = 0; i < arr.length && i < id.length && i < name.length && i < age.length &&
+				i < state.length && i < type.length ; i++)
+		{
+			arr[i] = i;
+			System.out.println("Please enter " + (arr[i]+1) + " athlete unique ID: "); 
 			list.setAthID(keyboard.nextLine());
-			System.out.println("Please enter " + (arr[i]+1) + "athlete name: ");
+			keyboard.nextLine();
+			System.out.println("Please enter " + (arr[i]+1) + " athlete name: ");
 			list.setAthName(keyboard.nextLine());
-			System.out.println("Please enter " + (arr[i]+1) + "athlete age: ");
-			list.setAge(keyboard.nextInt());;
-			System.out.println("Please enter " + (arr[i]+1) + "athlete state: ");
+			System.out.println("Please enter " + (arr[i]+1) + " athlete age: ");
+			list.setAge(keyboard.nextInt());
+			System.out.println("Please enter " + (arr[i]+1) + " athlete state: ");
 			list.setAthState(keyboard.nextLine());
+			keyboard.nextLine();
+			System.out.println("Please enter " + (arr[i]+1) + " athlete type: ");
+			list.setAthType(keyboard.nextLine());
 			id[i] = list.getAthID();
 			name[i] = list.getAthName();
 			age[i] = list.getAge();
 			state[i] = list.getAthState();
+			type[i] = list.getAthType();
+		}
+		ath.add(list);
+		}
+		else{
+			display();
+			startSystem();
 		}
 	}
 	
@@ -167,6 +180,17 @@ public class Driver {
 	              break;
 	      }
 	  }
+	}
+	public void display()
+	{
+		System.out.println("Ozlympic Game");
+		System.out.println("===================================");
+		System.out.println("1. Select a game to run");
+		System.out.println("2. Predict the winner of the game");
+		System.out.println("3. Start the game");
+		System.out.println("4. Display the final results of all games");
+		System.out.println("5. Display the points of all athletes");
+		System.out.println("6. Exit");
 	}
 	
 }
