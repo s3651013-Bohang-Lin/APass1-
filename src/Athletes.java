@@ -6,14 +6,14 @@ public class Athletes extends Participates {
 	ArrayList<String> type;// 加在 athletelist
 	
 	
-	public Athletes(int athID,String athName,int athAge,String athState)
+	public Athletes(String athID,String athName,int athAge,String athState)
 	{
 		super(athID, athName, athAge, athState);
 		type = new ArrayList<String>();
 	}
 	public Athletes()
 	{
-		this(0,"",0,"");
+		this("","",0,"");
 	}
 
 	//增加四种运动员，// 加在 athletelist
@@ -27,10 +27,10 @@ public class Athletes extends Participates {
         type.add("superAthletes"); //get(3) 调用
 	}
 	//overriding 所有get set 方法
-	public int getAthID() {
+	public String getAthID() {
 		return super.getUniqueID();
 	}
-	public void setAthID(int athID) {
+	public void setAthID(String athID) {
 		super.setUniqueID(athID);
 	}
 	public String getAthName() {

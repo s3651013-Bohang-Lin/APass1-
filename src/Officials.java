@@ -1,15 +1,15 @@
 import java.util.Scanner;
 public class Officials extends Participates {
 	
-	public Officials(int offiID,String offiName,int offiAge,String offiState)
+	public Officials(String offiID,String offiName,int offiAge,String offiState)
 	{
 		super(offiID, offiName, offiAge, offiState);
 	}
 	//overriding 所有get set 方法
-		public int getOffiID() {
+		public String getOffiID() {
 			return super.getUniqueID();
 		}
-		public void setOffiID(int athID) {
+		public void setOffiID(String athID) {
 			super.setUniqueID(athID);
 		}
 		public String getOffiName() {

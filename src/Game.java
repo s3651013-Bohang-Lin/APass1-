@@ -56,58 +56,63 @@ public class Game {
 	 * @return 
      */
 	//产生随机秒数。
-	public void compete(String gameType)
+	public double compete(String gameType)
 	{
 		double temp = 0;
 		if (gameType.equalsIgnoreCase("running"))
 		{
-			for (int i = 0; i <= num; i++) //为了后面的排名创造存入数组
-			{
+		//	for (int i = 0; i <= num; i++) //为了后面的排名创造存入数组
+			//{
 				double seconds = (double)(Math.random()*11) + 10;  //产生从10到20的随机数
-				randomNo[i] = seconds;
-				if (randomNo[i] < randomNo[i+1])// 冒泡排序
+				//randomNo[i] = seconds;
+				return seconds;
+				/*if (randomNo[i] < randomNo[i+1])// 冒泡排序
 				{
 					temp = randomNo[i];
 			        randomNo[i] = randomNo[i+1];
 			        randomNo[i+1] = temp;
 				}
-				System.out.println("randomNo[i]");
-			}
+				System.out.println("randomNo[i]");*/
+			//}
 			
 		}
 		else if (gameType.equalsIgnoreCase("swimming"))
 		{
-			for (int i = 0; i <= num; i++)
-			{
+			//for (int i = 0; i <= num; i++)
+			//{
 				double seconds = (double)(Math.random()*101) + 100;  //产生从100到200的随机数
-				randomNo[i] = seconds;
-				if (randomNo[i] < randomNo[i+1])// 冒泡排序
+				//randomNo[i] = seconds;
+				return seconds;
+				/*if (randomNo[i] < randomNo[i+1])// 冒泡排序
 				{
 					temp = randomNo[i];
 			        randomNo[i] = randomNo[i+1];
 			        randomNo[i+1] = temp;
 				}
-				System.out.println("randomNo[i]");
-			}
+				System.out.println("randomNo[i]");*/
+			//}
 		}
 		else if (gameType.equalsIgnoreCase("cycling"))
 		{
-			for (int i = 0; i <= num; i++)
-			{
+			//for (int i = 0; i <= num; i++)
+			//{
 				double seconds = (double)(Math.random()*301) + 500;  //产生从500到800的随机数
-				randomNo[i] = seconds;
-				if (randomNo[i] < randomNo[i+1])// 冒泡排序
+				//randomNo[i] = seconds;
+				return seconds;
+				/*if (randomNo[i] < randomNo[i+1])// 冒泡排序
 				{
 					temp = randomNo[i];
 			        randomNo[i] = randomNo[i+1];
 			        randomNo[i+1] = temp;
 				}
-				System.out.println("randomNo[i]");
-			}
+				System.out.println("randomNo[i]");*/
+			//}
 		}
 		else {
 			System.out.println("no game");
 		}
+		return 0;
+		
 	}
 	
 	public String setSport(String input)

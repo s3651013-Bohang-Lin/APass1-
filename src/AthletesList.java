@@ -14,7 +14,7 @@ public class AthletesList {
 		//athleteType = new String[4];
 	}
 	//增加运动员信息
-	public void addAthlete(int athID,String athName,int athAge,String athState)
+	public void addAthlete(String athID,String athName,int athAge,String athState)
 	{
 		Athletes info = new Athletes(athID, athName, athAge, athState);
 		list.add(info);
@@ -44,10 +44,10 @@ public class AthletesList {
 	//录入运动员信息
 	public void readInput()
 	{
-		Athletes list = new Athletes(0,"",0,"");
+		Athletes list = new Athletes("","",0,"");
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Enter athlete unique ID: "); 
-		list.setAthID(keyboard.nextInt());
+		list.setAthID(keyboard.nextLine());
 		System.out.println("Enter athlete name: ");
 		list.setAthName(keyboard.nextLine());
 		System.out.println("Enter athlete age: ");

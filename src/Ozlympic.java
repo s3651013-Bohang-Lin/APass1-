@@ -15,8 +15,6 @@ public class Ozlympic {
 		System.out.println("4. Display the final results of all games");
 		System.out.println("5. Display the points of all athletes");
 		System.out.println("6. Exit");
-		//drive.startSystem();
-//		drive.display();
 		new Ozlympic().drive.startSystem();
 	}
 }

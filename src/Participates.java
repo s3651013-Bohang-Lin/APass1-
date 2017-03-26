@@ -1,21 +1,21 @@
 
 public abstract class Participates {
-	private int uniqueID;
+	private String uniqueID;
 	private String name;
 	private int age;
 	private String state;
 	
-	public Participates(int ID, String Name, int Age, String State)
+	public Participates(String ID, String Name, int Age, String State)
 	{
 		setUniqueID(ID);
 		setName(Name);
 		setAge(Age);
 		setState(State);
 	}
-	public int getUniqueID() {
+	public String getUniqueID() {
 		return uniqueID;
 	}
-	public void setUniqueID(int uniqueID) {
+	public void setUniqueID(String uniqueID) {
 		this.uniqueID = uniqueID;
 	}
 	public String getName() {

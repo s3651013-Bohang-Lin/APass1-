@@ -85,11 +85,29 @@ public class Driver {
 	{
 		System.out.println("Please enter a game(swimming, cycling or running): ");
 		list.setName(keyboard.nextLine());
-		while(searchGame(list.getName()))
-		{
-			list.setName(keyboard.nextLine());
-		}
-		game.add(list);
+		//while(searchGame(list.getName()))
+		//{
+			//list.setName(keyboard.nextLine());
+		//}
+		//game.add(list);
+		System.out.println("");
+		System.out.println("Please enter the number of " + list.getName() + " Athletes: ");
+		int num = keyboard.nextInt();
+		int[] arr = new int[num]; //存放
+		String[] String_arr = new String[num]; //存放姓名的
+		String names = "";
+		
+		Athletes list = new Athletes("","",0,"");
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Enter athlete unique ID: "); 
+		list.setAthID(keyboard.nextLine());
+		System.out.println("Enter athlete name: ");
+		list.setAthName(keyboard.nextLine());
+		System.out.println("Enter athlete age: ");
+		list.setAge(keyboard.nextInt());;
+		System.out.println("Enter athlete state: ");
+		list.setAthState(keyboard.nextLine());;
+		
 	}
 	
 	public void predictGame()
