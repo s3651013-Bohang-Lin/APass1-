@@ -2,20 +2,19 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
-
 public class Driver {
 	private Random read;
 	private int input;
 	private Scanner keyboard;
 	private ArrayList<Game> game;
 	private Game list;
+	private AthletesList athList;
 	public Driver()
 	{
 		 keyboard = new Scanner(System.in);
 		 game = new ArrayList<Game>();
 		 list = new Game();
+		 athList = new AthletesList();
 	}
 	 public void setGame(ArrayList<Game> list)
 	    {
@@ -97,53 +96,66 @@ public class Driver {
 	{
 		
 	}
+	  
 	   /**
-     * This method will be executed when user needs to start this system.
-     * It will read information from a text file called "ozlympic.txt" automatically.
-     * Then it will provide a menu so that one can operate the system.
-     */
-    public void startSystem()
-    {
-        boolean exit = false;
-        //readFromFile();
-        while (!exit)
-        {
-            //displayMenu();
-            String option = keyboard.nextLine();
-            switch (option)
-            {
-                case "1":
-                	selectGame();
-                    break;
-                case "2":
-                   
-                    break;    
-                case "3":
-                	list.playOneRound();
-                    break;
-                case "4":
-                    
-                    break;
-                case "5":
-                    
-                    break;  
-                case "6":
-                	 //writeToFile();
-                     System.out.println("You have exited.");
-                     exit = true;
-                    break;  
-                default:
-                    System.out.println("Invalid option! Please choose the option from 1 to 6!");
-                    break;
-            }
-        }
-    }
-    
+	* This method will be executed when user needs to start this system.
+	* It will read information from a text file called "ozlympic.txt" automatically.
+	* Then it will provide a menu so that one can operate the system.
+	*/
+	public void startSystem()
+	{
+	
+	  boolean exit = false;
+	  //readFromFile();
+	  while (!exit)
+	  {
+	      String option = keyboard.nextLine();
+	      switch (option)
+	      {
+	          case "1":
+	          	  selectGame();
+	              break;
+	          case "2":
+	             
+	              break;    
+	          case "3":
+	          	  list.playOneRound();
+	              break;
+	          case "4":
+	              
+	              break;
+	          case "5":
+	              athList.listAllAthletes();
+	              break;  
+	          case "6":
+	          	 //writeToFile();
+	               System.out.println("You have exited.");
+	               exit = true;
+	              break;  
+	          default:
+	              System.out.println("Invalid option! Please choose the option from 1 to 6!");
+	              break;
+	      }
+	  }
+	}
+	public void display(){
+    	System.out.println("Ozlympic Game");
+		System.out.println("===================================");
+		System.out.println("1. Select a game to run");
+		System.out.println("2. Predict the winner of the game");
+		System.out.println("3. Start the game");
+		System.out.println("4. Display the final results of all games");
+		System.out.println("5. Display the points of all athletes");
+		System.out.println("6. Exit");
+		//startSystem();
+	}
+}
     /**
      * This method is responsible for read data from "student.txt".
      * It has simple validate function to examine the data coming from the text.
      * If some data cannot be read into database, it will generate a simple report.
      */
+    /*
     private void readFromFile()
     {
         String filename = "student.txt";
@@ -214,7 +226,7 @@ public class Driver {
             System.out.println("There are " + i + " students cannot enrol, please check student.txt");
         }
     }
-    
+    */
 	/*
 	public void response()
 	{
@@ -253,4 +265,4 @@ public class Driver {
 	}
 */
 	
-}
+

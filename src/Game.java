@@ -8,16 +8,19 @@ public class Game {
 	private String name; //项目名
 	private ArrayList<String> type;
 	private AthletesList list; 
+	private int num;
+	private double[] randomNo = new double[num];
     //Arrays.list.randomNo; 
     
 	public Game()
 	{
-		ID += 1;
+		setID(getID() + 1);
 		setName("");
 		//offi = Officials.getOff();
 		popu = 1;
 		type = new ArrayList<String>();
 		list = new AthletesList();
+		num = 8;
 	}
 	/*
 	//增加swimming
@@ -52,6 +55,61 @@ public class Game {
      * @param ignore the Case of sport's input.
 	 * @return 
      */
+	//产生随机秒数。
+	public void compete(String gameType)
+	{
+		double temp = 0;
+		if (gameType.equalsIgnoreCase("running"))
+		{
+			for (int i = 0; i <= num; i++) //为了后面的排名创造存入数组
+			{
+				double seconds = (double)(Math.random()*11) + 10;  //产生从10到20的随机数
+				randomNo[i] = seconds;
+				if (randomNo[i] < randomNo[i+1])// 冒泡排序
+				{
+					temp = randomNo[i];
+			        randomNo[i] = randomNo[i+1];
+			        randomNo[i+1] = temp;
+				}
+				System.out.println("randomNo[i]");
+			}
+			
+		}
+		else if (gameType.equalsIgnoreCase("swimming"))
+		{
+			for (int i = 0; i <= num; i++)
+			{
+				double seconds = (double)(Math.random()*101) + 100;  //产生从100到200的随机数
+				randomNo[i] = seconds;
+				if (randomNo[i] < randomNo[i+1])// 冒泡排序
+				{
+					temp = randomNo[i];
+			        randomNo[i] = randomNo[i+1];
+			        randomNo[i+1] = temp;
+				}
+				System.out.println("randomNo[i]");
+			}
+		}
+		else if (gameType.equalsIgnoreCase("cycling"))
+		{
+			for (int i = 0; i <= num; i++)
+			{
+				double seconds = (double)(Math.random()*301) + 500;  //产生从500到800的随机数
+				randomNo[i] = seconds;
+				if (randomNo[i] < randomNo[i+1])// 冒泡排序
+				{
+					temp = randomNo[i];
+			        randomNo[i] = randomNo[i+1];
+			        randomNo[i+1] = temp;
+				}
+				System.out.println("randomNo[i]");
+			}
+		}
+		else {
+			System.out.println("no game");
+		}
+	}
+	
 	public String setSport(String input)
 	{
 		String sportName;
@@ -85,7 +143,7 @@ public class Game {
 	           sport = setSport(keyboard.nextLine());
 	       }
 	       // sport.setSport(getSport(sport));
-		list.compete(sport);
+		compete(sport);
 		
 		
 	}
@@ -96,6 +154,14 @@ public class Game {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public static int getID() {
+		return ID;
+	}
+
+	public static void setID(int iD) {
+		ID = iD;
 	}
 	
 	/*

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Athletes extends Participates {
-	ArrayList<String> type;
+	ArrayList<String> type;// 加在 athletelist
 	
 	
 	public Athletes(int athID,String athName,int athAge,String athState)
@@ -16,7 +16,7 @@ public class Athletes extends Participates {
 		this(0,"",0,"");
 	}
 
-	//增加四种运动员
+	//增加四种运动员，// 加在 athletelist
 	
 	public void addType()
 	{
@@ -43,7 +43,7 @@ public class Athletes extends Participates {
 		return super.getAge();
 	}
 	public void setAthAge(int age) {
-		super.setAge(age);;
+		super.setAge(age);
 	}
 	public String getAthState() {
 		return super.getState();
@@ -51,7 +51,23 @@ public class Athletes extends Participates {
 	public void setAthState(String state) {
 		super.setState(state);
 	}
-	
+	 /**
+     * @return The Id, name, age and state together.
+     */
+    public String getDetails()
+    {
+		return "Athletes ID:" + getAthID() + " Name: " + getAthName() + "  age: " + getAge()
+		+ " state: " + getAthState();
+    }
+    
+    /**
+     * @set The Id, name, age and state together.
+     */
+    /*
+    private void setDetails(int athID,String athName,int athAge,String athState)
+    {
+        
+    }*/
 	/*
 	public String  getName(int y)
 	{
