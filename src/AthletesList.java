@@ -14,15 +14,24 @@ public class AthletesList {
 		//athleteType = new String[4];
 	}
 	//增加运动员信息
-	public void addAthlete(String athID,String athName,int athAge,String athState)
+	public void addAthlete(String athID,String athName,int athAge,String athState,String athType)
 	{
-		Athletes info = new Athletes(athID, athName, athAge, athState);
+		Athletes info = new Athletes(athID, athName, athAge, athState, athType);
 		list.add(info);
 	}
 	
 
-	
-
+	//增加四种运动员，// 加在 athletelist
+	/*
+		public void addType()
+		{
+			  
+	        list.add("swimmers");  
+	        list.add("cyclists");  
+	        list.add("sprinters");
+	        list.add("superAthletes"); //get(3) 调用
+		}
+*/
     /**
      * List All athletes from the collection.
      * @param index The index of athletes to be listed.
@@ -44,7 +53,7 @@ public class AthletesList {
 	//录入运动员信息
 	public void readInput()
 	{
-		Athletes list = new Athletes("","",0,"");
+		Athletes list = new Athletes("","",0,"","");
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Enter athlete unique ID: "); 
 		list.setAthID(keyboard.nextLine());

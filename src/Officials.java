@@ -1,9 +1,9 @@
 import java.util.Scanner;
 public class Officials extends Participates {
 	
-	public Officials(String offiID,String offiName,int offiAge,String offiState)
+	public Officials(String offiID,String offiName,int offiAge,String offiState, String gameType)
 	{
-		super(offiID, offiName, offiAge, offiState);
+		super(offiID, offiName, offiAge, offiState, gameType);
 	}
 	//overriding 所有get set 方法
 		public String getOffiID() {
@@ -29,6 +29,12 @@ public class Officials extends Participates {
 		}
 		public void setOffiState(String state) {
 			super.setState(state);
+		}
+		public String getGameType(){ //录入裁判属于哪项比赛
+			return super.getType();
+		}
+		public void setGameType(String gameType){
+			super.setType(gameType);
 		}
 		
 	

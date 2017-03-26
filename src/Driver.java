@@ -93,21 +93,33 @@ public class Driver {
 		System.out.println("");
 		System.out.println("Please enter the number of " + list.getName() + " Athletes: ");
 		int num = keyboard.nextInt();
-		int[] arr = new int[num]; //存放
-		String[] String_arr = new String[num]; //存放姓名的
+		int[] arr = new int[num];
+		String[] id = new String[num]; //存放ID
+		String[] name = new String[num]; //存放姓名的
+		int[] age = new int[num];//存放年龄
+		String[] state = new String[num];//存放国家
+		String ID = "";
 		String names = "";
-		
-		Athletes list = new Athletes("","",0,"");
-		Scanner keyboard = new Scanner(System.in);
-		System.out.println("Enter athlete unique ID: "); 
-		list.setAthID(keyboard.nextLine());
-		System.out.println("Enter athlete name: ");
-		list.setAthName(keyboard.nextLine());
-		System.out.println("Enter athlete age: ");
-		list.setAge(keyboard.nextInt());;
-		System.out.println("Enter athlete state: ");
-		list.setAthState(keyboard.nextLine());;
-		
+		int ages = 0;
+		String states = "";
+		for(int i = 0; i < id.length && i < name.length && i < age.length && i < state.length; i++)
+		{
+			
+			Athletes list = new Athletes("","",0,"","");
+
+			System.out.println("Please enter " + (arr[i]+1) + "athlete unique ID: "); 
+			list.setAthID(keyboard.nextLine());
+			System.out.println("Please enter " + (arr[i]+1) + "athlete name: ");
+			list.setAthName(keyboard.nextLine());
+			System.out.println("Please enter " + (arr[i]+1) + "athlete age: ");
+			list.setAge(keyboard.nextInt());;
+			System.out.println("Please enter " + (arr[i]+1) + "athlete state: ");
+			list.setAthState(keyboard.nextLine());
+			id[i] = list.getAthID();
+			name[i] = list.getAthName();
+			age[i] = list.getAge();
+			state[i] = list.getAthState();
+		}
 	}
 	
 	public void predictGame()

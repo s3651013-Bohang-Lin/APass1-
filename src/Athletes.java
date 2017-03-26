@@ -3,29 +3,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Athletes extends Participates {
-	ArrayList<String> type;// 加在 athletelist
 	
 	
-	public Athletes(String athID,String athName,int athAge,String athState)
+	
+	public Athletes(String athID,String athName,int athAge,String athState, String athType)
 	{
-		super(athID, athName, athAge, athState);
-		type = new ArrayList<String>();
+		super(athID, athName, athAge, athState, athType);
+		
 	}
 	public Athletes()
 	{
-		this("","",0,"");
+		this("","",0,"","");
+		
 	}
 
-	//增加四种运动员，// 加在 athletelist
 	
-	public void addType()
-	{
-		  
-        type.add("swimmers");  
-        type.add("cyclists");  
-        type.add("sprinters");
-        type.add("superAthletes"); //get(3) 调用
-	}
 	//overriding 所有get set 方法
 	public String getAthID() {
 		return super.getUniqueID();
@@ -50,6 +42,12 @@ public class Athletes extends Participates {
 	}
 	public void setAthState(String state) {
 		super.setState(state);
+	}
+	public String getAthType(){
+		return super.getType();
+	}
+	public void setAthType(String athType){
+		super.setType(athType);
 	}
 	 /**
      * @return The Id, name, age and state together.
