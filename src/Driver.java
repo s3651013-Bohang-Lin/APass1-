@@ -121,6 +121,7 @@ public class Driver {
 			keyboard.nextLine();
 			System.out.println("Please enter " + (arr[i]+1) + " athlete type: ");
 			list.setAthType(keyboard.nextLine());
+			
 			id[i] = list.getAthID();
 			name[i] = list.getAthName();
 			age[i] = list.getAge();

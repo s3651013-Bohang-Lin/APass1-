@@ -1,10 +1,11 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
-
+import java.io.*;
 public class AthletesList {
 	//private String[] subjects;
 	private ArrayList<Athletes> list;
+	
 	private int Score;
 	//private String[] athleteType;
 	public AthletesList() {
@@ -44,32 +45,62 @@ public class AthletesList {
         }
         System.out.println();
     }
-	/*
-	public String getScore()
-	{
-		return 
-	}
-	*/
-	//录入运动员信息
-	public void readInput()
-	{
-		Athletes list = new Athletes("","",0,"","");
-		Scanner keyboard = new Scanner(System.in);
-		System.out.println("Enter athlete unique ID: "); 
-		list.setAthID(keyboard.nextLine());
-		System.out.println("Enter athlete name: ");
-		list.setAthName(keyboard.nextLine());
-		System.out.println("Enter athlete age: ");
-		list.setAge(keyboard.nextInt());;
-		System.out.println("Enter athlete state: ");
-		list.setAthState(keyboard.nextLine());;
-	}
-	
-	/*
-	public int ddd()
-	{
-		athleteList.add();
-		athleteList.remove();
-		athleteList.get(1).getName();//提取排名1号位的运动员的名字
-	}*/
+    /**
+     * read a file from the local fold..
+     */
+    
+    public ArrayList<Athletes> readFile()
+    {
+        String fileName = "athletes.txt";
+       // ArrayList<Student> files = new ArrayList<Student>();
+        try
+        {
+            File file = new File(fileName);
+            FileReader inputFile = new FileReader(file);
+            Scanner parser = new Scanner(inputFile);
+
+            while(parser.hasNextLine()) // judge whether the next row is empty
+            {
+                String line = parser.nextLine();
+                String[] lineParts = line.split(",");
+                String athID = lineParts[0];
+                String athName = lineParts[1];
+                int athAge = Integer.parseInt(lineParts[2]);
+                String athState = lineParts[3];
+                String athType = lineParts[4];
+                Athletes athlete = new Athletes(athID, athName, athAge, athState, athType);
+                list.add(athlete);
+            }
+            inputFile.close();
+        }
+        catch(IOException e) //Capture the IO exception
+        {
+            System.out.println(fileName + "Can Not be Loaded.");
+        }
+        return list;
+    }
+
+    
+    /**
+     *write in details in a file from the local fold..
+     */
+    public void writeFile(ArrayList<Athletes> list)
+    {
+        String fileName = "athletes.txt";
+        try
+        {
+            PrintWriter outPrinter = new PrintWriter(fileName);
+            for(Athletes athlete : list) 
+            {
+                outPrinter.println(athlete.getAthID() + "," + athlete.getAthName() + "," 
+            + athlete.getAthAge() + "," + athlete.getAthState() + "," + athlete.getAthType());
+            }
+            outPrinter.close();
+        }
+        catch(IOException e)
+        {
+            System.out.println(fileName + "Cannot Be Saved. ");
+        }
+    }
+
 }
