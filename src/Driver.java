@@ -82,7 +82,9 @@ public class Driver {
      * select a game to run.
      * @param add the details to the Game.
      */
-
+	
+	
+	//case1：选择项目 并 判断是否增加新运动员
 	public void selectGame()
 	{
 		Athletes list = new Athletes("","",0,"","");
@@ -195,83 +197,7 @@ public class Driver {
 	}
 	
 }
-    /**
-     * This method is responsible for read data from "student.txt".
-     * It has simple validate function to examine the data coming from the text.
-     * If some data cannot be read into database, it will generate a simple report.
-     */
-    /*
-    private void readFromFile()
-    {
-        String filename = "student.txt";
-        int i = 0;
-        stuDB.deleteAll();
-        try
-        {
-            FileReader inputFile = new FileReader(filename);
-            Scanner parser = new Scanner(inputFile);
-            do
-            {
-                try
-                {
-                    String line = parser.nextLine();
-                    String[] parts = line.split(",");
-                    String name = parts[0];
-                    int phone = Integer.valueOf(parts[1]);
-                    if (check.checkName(name) &&
-                        check.checkPhone(phone) &&
-                        parts.length <= 5)
-                    {
-                        SubjectCollection sub = new SubjectCollection();
-                        for (int index = 2;index < parts.length;index++)
-                        {
-                            if (sub.getSize() == 0)
-                            {
-                                sub.setSub(parts[index]);
-                            }
-                            else if (sub.checkDuplicate(parts[index]))
-                            {
-                                System.out.println("Duplicated subject in student information. Delete it automatically.");
-                            }
-                            else
-                                sub.setSub(parts[index]);
-                        }
-                        Student stud = new Student(name,phone,sub);
-                        stuDB.setToStuDB(stud);
-                    }
-                    else
-                    {
-                        System.out.println("Invalid data format.");
-                        i++;
-                    }
-                }
-                catch (NumberFormatException c)
-                {
-                    System.out.println("Invalid data format.");
-                    i++;
-                }
-                catch (ArrayIndexOutOfBoundsException d) 
-                {
-                    System.out.println("Invalid data format.");
-                    i++;
-                }
-            }while (parser.hasNextLine());
-            inputFile.close();
-        }
-        catch (FileNotFoundException a)
-        {
-            System.out.println(filename + " not found");
-        }
-        catch (IOException b)
-        {
-            System.out.println("Fail to read from file.");
-        }
-        if (i != 0)
-        {
-            System.out.println("There are " + i + " students cannot enrol, please check student.txt");
-        }
-    }
-    */
+   
 	/*
 	public void response()
 	{
@@ -292,22 +218,7 @@ public class Driver {
 		}
 	}
 	*/
-    /*
-	public void guessWin()
-	{
-		input = Scanner.nextInt();//随机数
-		System.out.println("");
-	}
-	
-	public void startGame()
-	{
-		for ()
-			{
-			Athletes.getScore() = Ran.next(num);
-			排名次
-			}
-	    
-	}
-*/
+   
+
 	
 
