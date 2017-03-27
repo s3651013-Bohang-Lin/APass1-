@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Driver {
+public class Driver {1
 	private Random read;
 	private int input;
 	private Scanner keyboard;
