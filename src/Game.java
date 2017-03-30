@@ -120,7 +120,7 @@ public class Game {
 		String sportName;
 		if (input.equalsIgnoreCase("swimming") || input.equalsIgnoreCase("running") 
 				|| input.equalsIgnoreCase("cycling"))
-		{
+		{n
 			sportName = input.toLowerCase();
 			return sportName;
 		}
