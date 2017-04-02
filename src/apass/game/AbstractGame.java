@@ -1,4 +1,4 @@
-package appas.game;
+package apass.game;
 
 import java.util.HashMap;
 import java.util.List;
