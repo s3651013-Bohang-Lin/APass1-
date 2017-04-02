@@ -57,19 +57,5 @@ public class Athletes extends Participates {
 		return "Athletes ID:" + getAthID() + " Name: " + getAthName() + "  age: " + getAge()
 		+ " state: " + getAthState();
     }
-    
-    /**
-     * @set The Id, name, age and state together.
-     */
-    /*
-    private void setDetails(int athID,String athName,int athAge,String athState)
-    {
-        
-    }*/
-	/*
-	public String  getName(int y)
-	{
-		return super.getName();
-	}
-	*/
+ 
 }
