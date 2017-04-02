@@ -1,10 +1,18 @@
+package apass.participates;
 
+/**
+ * Participant abstract class
+ * @author Bohang Lin
+ *
+ */
 public abstract class Participates {
+	
 	private String uniqueID;
 	private String name;
 	private int age;
 	private String state;
 	private String type; //运动员种类 及裁判属于哪项运动
+	
 	public Participates(String ID, String Name, int Age, String State, String Type)
 	{
 		setUniqueID(ID);
@@ -13,6 +21,8 @@ public abstract class Participates {
 		setState(State);
 		setType(Type);
 	}
+	
+	
 	public String getUniqueID() {
 		return uniqueID;
 	}
@@ -43,4 +53,5 @@ public abstract class Participates {
 	public void setType(String type) {
 		this.type = type;
 	}
+
 }

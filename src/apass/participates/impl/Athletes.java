@@ -1,16 +1,27 @@
+package apass.participates.impl;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import apass.participates.Participates;
+
+
 
 public class Athletes extends Participates {
 	
+	private Integer scores = 0;
 	
-	
+	public Integer getScores() {
+		return scores;
+	}
+
+	public void setScores(Integer scores) {
+		this.scores = scores;
+	}
+
 	public Athletes(String athID,String athName,int athAge,String athState, String athType)
 	{
 		super(athID, athName, athAge, athState, athType);
 		
 	}
+	
 	public Athletes()
 	{
 		this("","",0,"","");
@@ -54,8 +65,12 @@ public class Athletes extends Participates {
      */
     public String getDetails()
     {
-		return "Athletes ID:" + getAthID() + " Name: " + getAthName() + "  age: " + getAge()
-		+ " state: " + getAthState();
+		return "ID:" + getAthID() + " Name:" + getAthName() + "  age:" + getAge()
+		+ " state:" + getAthState() + " type:"+getAthType();
     }
- 
+    
+    @Override
+    public String toString(){
+    	return getDetails();
+    }
 }
