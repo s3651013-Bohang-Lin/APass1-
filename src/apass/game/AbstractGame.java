@@ -9,7 +9,7 @@ import apass.participates.impl.Athletes;
 import apass.participates.impl.Officials;
 /**
  *Game abstract class provides general behavior and some subclasses to achieve their abstract method
- * @author Bohang Lin
+ * @author Bohang Lin s3651013
  *
  */
 public abstract class AbstractGame {
@@ -17,9 +17,9 @@ public abstract class AbstractGame {
 	private String gameId;     //game ID
 	private String gameName;   //game name
 	private Map<String, Double> athletsSecondResult = new HashMap<String, Double>();  // map-saving the results of each player  key放运动员列表id  value放成绩秒数
-	private Officials offi;				  //裁判     每个游戏有一个裁判
-	private List<Athletes> athlets = new ArrayList<Athletes>();       //参加的运动员
-	private boolean isRun = false;   //是否运行过的标志  展示结果时如果还没运行过则不展示 需要先选择运行
+	private Officials offi;				 
+	private List<Athletes> athlets = new ArrayList<Athletes>();       
+	private boolean isRun = false;   
 	
 	public AbstractGame(String gameId, String gameName) {
 		super();
@@ -64,13 +64,13 @@ public abstract class AbstractGame {
 	public abstract double compete();   
 	
 	/**
-	 * 开始这个游戏  会依次调用随机成绩产生方法 生成每个运动员的成绩  
-	 * 保存到map中 供后面查询使用
+	 * To start the game, you will call a random score to generate the results of each player 
+	 * Save to map for later query use 
 	 */
 	public void runGame(){
-		isRun = true;   //修改运行标志位true   表示执行过runGame步骤
+		isRun = true;   //Modify the operation flag bit true, said the implementation of the rungame steps
 
-		if(athlets.size() < 4){//如果运动员小于4个 则不能运行比赛 所以提示信息
+		if(athlets.size() < 4){
 			System.out.println("==========================================================");
 			System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
 			System.out.println("the game is not run because athletes is less than 4");
@@ -84,19 +84,19 @@ public abstract class AbstractGame {
 	}
 	
 	/**
-	 * 展示参加了该游戏的所有运动员成绩
-	 * 通过查询成绩结果map
+	 * Show all the players participating in the game 
+	 * Query results by query map 
 	 */
 	public void displayAthletsResults(){
 		
-		if(!isRun){//如果没有选中3运行游戏 则还不能展示结果
+		if(!isRun){//If you do not select the 3 run the game can not show results 
 			System.out.println("==========================================================");
 			System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
 			System.out.println("the game is not run please select the menu Start the games to run ");
 			return;
 		}
 		
-		if(athlets.size() < 4){//如果运动员小于4个 则不能运行比赛 所以提示信息
+		if(athlets.size() < 4){//If the player is less than 4, you can't run the game 
 			System.out.println("==========================================================");
 			System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
 			System.out.println("the game is not run because athletes is less than 4");

@@ -33,7 +33,7 @@ public class Athletes extends Participates {
 	}
 
 	
-	//overriding 所有get set 方法
+	//overriding 
 	public String getAthID() {
 		return super.getUniqueID();
 	}

@@ -11,7 +11,7 @@ public abstract class Participates {
 	private String name;
 	private int age;
 	private String state;
-	private String type; //运动员种类 及裁判属于哪项运动
+	private String type; //athletes and referees belong to
 	
 	public Participates(String ID, String Name, int Age, String State, String Type)
 	{

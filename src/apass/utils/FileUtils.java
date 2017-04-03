@@ -5,8 +5,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * 文件读取工具
- * 写得比较简单
+ * File reader 
+ * 
  * @author JinMing Liu s3596621
  *
  */

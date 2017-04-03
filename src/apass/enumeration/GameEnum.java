@@ -2,7 +2,7 @@ package apass.enumeration;
 
 /**
  * Game type enumeration
- * @author Bohang Lin
+ * @author Bohang Lin s3651013
  *
  */
 public enum GameEnum {
@@ -39,7 +39,10 @@ public enum GameEnum {
 		this.gameIdPre = gameIdPre;
 	}
 
-
+	/**
+	 * Game type enumeration
+	 *
+	 */
 	public static GameEnum getGameByIndex(int index){
 	
 		GameEnum[] games = values();

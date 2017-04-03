@@ -10,24 +10,24 @@ import apass.game.impl.Running;
 import apass.game.impl.Swimming;
 
 /**
- * 游戏工厂 因为游戏可以选择多个 每次选则同一种游戏则id需要变化 如游泳S01 S02
- * 所以通过工厂类进行游戏创建
- * @author Bohang Lin
+ *  because the game can choose more than one election each time the same game Id need to change 
+ * So through the factory class to create the game 
+ * @author Bohang Lin s3651013
  *
  */
 public class GameFactory {
 
-	//保存各种游戏的当前数量 用于生成游戏id
+	//Save the current number of games used to generate the game ID 
 	private  static Map<GameEnum, Integer> gameMap = new HashMap<GameEnum, Integer>(); 
 	
-	static{//初始化为0
+	static{//Initialize to 0 
 		for(GameEnum gameEnum : GameEnum.values()){
 			gameMap.put(gameEnum, 0);
 		}
 	}
 	
 	/**
-	 * 根据选择的游戏类型创建游戏
+	 * Create a game based on the selected game type 
 	 * @param gameType
 	 * @return
 	 */

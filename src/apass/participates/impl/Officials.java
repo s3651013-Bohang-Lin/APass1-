@@ -19,7 +19,7 @@ public class Officials extends Participates {
 	}
 	
 	
-	//overriding 所有get set 方法
+	//overriding 
 		public String getOffiID() {
 			return super.getUniqueID();
 		}
@@ -44,7 +44,7 @@ public class Officials extends Participates {
 		public void setOffiState(String state) {
 			super.setState(state);
 		}
-		public String getGameType(){ //录入裁判属于哪项比赛
+		public String getGameType(){ 
 			return super.getType();
 		}
 		public void setGameType(String gameType){
@@ -58,16 +58,16 @@ public class Officials extends Participates {
 			Map<String, Double> athletsSecondResult = game.getAthletsSecondResult();
 			for(Athletes ath : athletes){
 			    Double seconds = athletsSecondResult.get(ath.getAthID());
-			    if(seconds == null){//如果这个运动员没有成绩 则可能是游戏未运行或其他原因 该场比赛不统计分数
+			    if(seconds == null){//If the player does not score the game may not be running or other reasons the game does not count scores 
 			    	continue;
 			    }
-			    int ranking = 1; //名次 默认第一名
+			    int ranking = 1; //Default first place 
 			    for(Entry<String, Double> entry : athletsSecondResult.entrySet()){
 			    	if(entry.getKey() == ath.getAthID()){
-			    		continue;  //跳过自己
+			    		continue;  //Skip yourself 
 			    	}
 			    	
-			    	if(entry.getValue() < seconds){ //有其他人比自己快
+			    	if(entry.getValue() < seconds){ //There are others faster than themselves
 			    		ranking ++;
 			    	}
 			    }

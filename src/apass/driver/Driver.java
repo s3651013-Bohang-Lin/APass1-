@@ -1,5 +1,10 @@
 package apass.driver;
 
+/**
+ * the main methods to run the game
+ * @author Bohang Lin s3651013
+ *
+ */
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -161,7 +166,7 @@ public class Driver {
 		}
 
 		
-		info = "please select a offic for this game:\n";
+		info = "please select a official for this game:\n";
 		int i=1;
 		for(Officials offic : offics){
 			info += (i++)+ " : " + offic + "\n";
@@ -173,7 +178,7 @@ public class Driver {
 			input = getKeyboard().nextInt();
 		}
 		Officials selOffic = offics.get(input-1);
-		System.out.println("you have select the offic: "+selOffic);
+		System.out.println("you have select the official: "+selOffic);
 		
 		AbstractGame game = GameFactory.createAGame(gameType);
 		game.setOffi(selOffic);
