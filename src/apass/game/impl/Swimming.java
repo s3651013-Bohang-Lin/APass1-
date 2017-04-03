@@ -18,7 +18,7 @@ public class Swimming extends AbstractGame{
 	 */
 	@Override
 	public double compete() {
-		return (double)(Math.random()*101) + 100;  //Generating random numbers from 100 to 200 
+		return (double)Math.round(((Math.random()*101) + 100)*100)/100.0;  //Generating random numbers from 100 to 200 and keep two decimal places 
 	}
 
 

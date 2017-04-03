@@ -18,6 +18,6 @@ public class Running extends AbstractGame{
 	 */
 	@Override
 	public double compete() {
-		return (double)(Math.random()*11) + 10;  //Generating random numbers from 10 to 20
+		return (double)Math.round(((Math.random()*11) + 10)*100)/100.0;  //Generating random numbers from 10 to 20 and keep two decimal places 
 	}
 }

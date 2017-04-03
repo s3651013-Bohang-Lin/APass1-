@@ -252,6 +252,7 @@ public class Driver {
 		String msg = "";
 		int i=0;
 		for(Athletes a : aths){
+			
 			msg += (++i) + " : " + a + "\n";
 		}
 		System.out.println("please choose the winner athletes you predict\n"+msg );

@@ -18,6 +18,7 @@ public class Cycling extends AbstractGame{
 	 */
 	@Override
 	public double compete() {
-		return (double)(Math.random()*301) + 500;  //Generating random numbers from 500 to 800 
+	 
+		return (double)Math.round(((Math.random()*301) + 500)*100)/100.0;  //Generating random numbers from 500 to 800 and keep two decimal places 
 	}
 }
