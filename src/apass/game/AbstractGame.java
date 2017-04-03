@@ -72,7 +72,7 @@ public abstract class AbstractGame {
 
 		if(athlets.size() < 4){//如果运动员小于4个 则不能运行比赛 所以提示信息
 			System.out.println("==========================================================");
-			System.out.println("game 【id:"+this.getGameId() + ", name:"+this.gameName+"】");
+			System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
 			System.out.println("the game is not run because athletes is less than 4");
 			return;
 		}
@@ -91,20 +91,20 @@ public abstract class AbstractGame {
 		
 		if(!isRun){//如果没有选中3运行游戏 则还不能展示结果
 			System.out.println("==========================================================");
-			System.out.println("game 【id:"+this.getGameId() + ", name:"+this.gameName+"】");
+			System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
 			System.out.println("the game is not run please select the menu Start the games to run ");
 			return;
 		}
 		
 		if(athlets.size() < 4){//如果运动员小于4个 则不能运行比赛 所以提示信息
 			System.out.println("==========================================================");
-			System.out.println("game 【id:"+this.getGameId() + ", name:"+this.gameName+"】");
+			System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
 			System.out.println("the game is not run because athletes is less than 4");
 			return;
 		}
 		
 		System.out.println("==========================================================");
-		System.out.println("game 【id:"+this.getGameId() + ", name:"+this.gameName+"】");
+		System.out.println("game id:"+this.getGameId() + ", name:"+this.gameName);
 		Officials offi = this.getOffi();
 		System.out.println("officials: "+offi);
 		for(Athletes ath : athlets){

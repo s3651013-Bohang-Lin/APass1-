@@ -263,7 +263,7 @@ public class Driver {
 		}
 		
 		predictWinner = aths.get(input-1);
-		System.out.println("you have predict that ¡¾"+predictWinner.getAthName() + "¡¿ is the winner");
+		System.out.println("you have predict that "+predictWinner.getAthName() + " is the winner");
 	}
 	  
     private Scanner getKeyboard(){
