@@ -76,7 +76,7 @@ public class Driver {
 	}
 
 	/**
-	 * 展示所有运动员的成绩结果
+	 * Show the results of all athletes
 	 */
 	private void disPlayAllGameResult() {
 		for(AbstractGame game : games){
@@ -85,11 +85,11 @@ public class Driver {
 	}
 
 	/**
-	 * 计算分数
+	 * Calculated fraction
 	 */
 	private void calThePlayerScores() {
 		
-		for(AbstractGame game : games){//每个游戏都只能由他的裁判进行分数统计
+		for(AbstractGame game : games){//Each game can only be scored by the referee statistics
 			  game.getOffi().calScores(game);
 		}
 		
@@ -97,7 +97,7 @@ public class Driver {
 			  System.out.println(ath + " scores:" +ath.getScores());
 		}
 		
-		//按分数排序
+		//Sort by fraction
 		Collections.sort(aths, new Comparator<Athletes>() {
 			@Override
 			public int compare(Athletes o1, Athletes o2) {
@@ -108,7 +108,7 @@ public class Driver {
 		Athletes realWinner = aths.get(0);
 		System.out.println("the realWinner is "+realWinner);
 		
-		if(predictWinner == null){//用户没有进行预测 所以不执行下面的代码
+		if(predictWinner == null){// the user does not predict so it do not execute following code 
 			return;
 		}
 		if(predictWinner.getAthID().equals(realWinner.getAthID())){
@@ -119,15 +119,15 @@ public class Driver {
 	}
 
 	/**
-	 * 运行所有比赛 
-	 * 统计运动员成绩
+	 * Run all races
+	 * Statistical performance of athlete
 	 */
 	private void runningTheGames() {
 		
 		System.out.println(" now has "+games.size()+" games");
 		for(AbstractGame game : games){
 		  List<Athletes> players = new ArrayList<Athletes>();
-		  if(game instanceof Swimming){ //如果是游泳
+		  if(game instanceof Swimming){ //if it is swimming
 			  players.addAll(swimmingAths);
 		  }
 		  if(game instanceof Running){
@@ -142,7 +142,7 @@ public class Driver {
 	    }
 	}
 	
-	//case1：选择项目 并 判断是否增加新运动员
+	//case1：select project and  determine whether to add new players
 	public void selectGame()
 	{
 		info = "please enter a game you want to run:\n";
@@ -182,7 +182,7 @@ public class Driver {
 	}
 	
 	/**
-	 * jiaziai 运动原
+	 * read athlete data from text
 	 */
 	public void loadPlayers(){
 		
@@ -210,8 +210,7 @@ public class Driver {
 			 if("SUPERATHLETES".equals(ath.getAthType())){
 				 superAths.add(ath);
 			 }
-			 aths.add(ath);
-		  }
+			 aths.add(ath);		  }
 		  
 		 System.out.println("there are "+aths.size()+" athletes");
 		 for(Athletes a : aths){
@@ -222,7 +221,7 @@ public class Driver {
 	
 	
 	/**
-	 * 加载裁判
+	 * loading referee
 	 */
 	public void loadOffics(){
 		
@@ -246,7 +245,7 @@ public class Driver {
 	
 	
     /**
-     * 预测胜利者
+     * predict winner
      */
 	public void predictGame()
 	{

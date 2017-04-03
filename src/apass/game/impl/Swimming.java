@@ -2,6 +2,11 @@ package apass.game.impl;
 
 import apass.game.AbstractGame;
 
+/**
+ * Swimming class
+ * @author JinMing Liu s3596621
+ *
+ */
 public class Swimming extends AbstractGame{
 
 	public Swimming(String gameId) {

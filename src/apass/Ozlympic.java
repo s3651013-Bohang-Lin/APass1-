@@ -2,8 +2,8 @@ package apass;
 import apass.driver.Driver;
 
 /**
- * 主程序入口
- * 提供输入提示
+ * Main program entry
+ * offer Input prompt
  * @author Bohang Lin
  *
  */

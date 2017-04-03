@@ -5,6 +5,12 @@ import java.util.Map.Entry;
 
 import apass.game.AbstractGame;
 import apass.participates.Participates;
+/**
+ * officials class
+ * @author JinMing Liu s3596621
+ *
+ */
+
 public class Officials extends Participates {
 	
 	public Officials(String offiID,String offiName,int offiAge,String offiState, String gameType)

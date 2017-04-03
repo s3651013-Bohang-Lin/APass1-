@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 /**
  * 文件读取工具
  * 写得比较简单
- * @author Bohang Lin
+ * @author JinMing Liu s3596621
  *
  */
 public class FileUtils {

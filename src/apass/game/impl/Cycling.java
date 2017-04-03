@@ -1,6 +1,12 @@
 package apass.game.impl;
 
 import apass.game.AbstractGame;
+
+/**
+ * Cyclng class
+ * @author JinMing Liu s3596621
+ *
+ */
 public class Cycling extends AbstractGame{
 
 	public Cycling(String gameId) {

@@ -1,7 +1,7 @@
 package apass.enumeration;
 
 /**
- * 游戏类型枚举
+ * Game type enumeration
  * @author Bohang Lin
  *
  */

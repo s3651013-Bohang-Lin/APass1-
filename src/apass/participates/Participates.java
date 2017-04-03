@@ -2,7 +2,7 @@ package apass.participates;
 
 /**
  * Participant abstract class
- * @author Bohang Lin
+ * @author JinMing Liu s3596621
  *
  */
 public abstract class Participates {

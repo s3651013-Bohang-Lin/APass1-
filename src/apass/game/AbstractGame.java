@@ -8,15 +8,15 @@ import java.util.Map;
 import apass.participates.impl.Athletes;
 import apass.participates.impl.Officials;
 /**
- * 游戏抽象类  提供通用的行为 以及一些需要由子类去各自实现的抽象方法
+ *Game abstract class provides general behavior and some subclasses to achieve their abstract method
  * @author Bohang Lin
  *
  */
 public abstract class AbstractGame {
 
-	private String gameId;     //游戏id
-	private String gameName;   //游戏名称
-	private Map<String, Double> athletsSecondResult = new HashMap<String, Double>();  //存放每个运动员的成绩map  key放运动员列表id  value放成绩秒数
+	private String gameId;     //game ID
+	private String gameName;   //game name
+	private Map<String, Double> athletsSecondResult = new HashMap<String, Double>();  // map-saving the results of each player  key放运动员列表id  value放成绩秒数
 	private Officials offi;				  //裁判     每个游戏有一个裁判
 	private List<Athletes> athlets = new ArrayList<Athletes>();       //参加的运动员
 	private boolean isRun = false;   //是否运行过的标志  展示结果时如果还没运行过则不展示 需要先选择运行
@@ -59,7 +59,7 @@ public abstract class AbstractGame {
 	}
 	
 	/**
-	 * 计算成绩的方法 每个游戏不一样 所以需要由实现类实现这个方法
+	 *the method of calculating result cause it is different, need the concrete class to  achieve that method 
 	 */
 	public abstract double compete();   
 	

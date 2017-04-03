@@ -2,7 +2,11 @@ package apass.participates.impl;
 
 import apass.participates.Participates;
 
-
+/**
+ * Athletes class
+ * @author JinMing Liu s3596621
+ *
+ */
 
 public class Athletes extends Participates {
 	
