@@ -14,6 +14,7 @@ import apass.game.impl.Cycling;
 import apass.game.impl.Running;
 import apass.game.impl.Swimming;
 import apass.participates.impl.Athletes;
+import apass.participates.impl.Officials;
 import apass.utils.FileUtils;
 
 public class Driver {
@@ -23,6 +24,7 @@ public class Driver {
 	private ArrayList<Athletes> runningAths = new ArrayList<Athletes>();
 	private ArrayList<Athletes> cyclingAths = new ArrayList<Athletes>();
 	private ArrayList<Athletes> superAths = new ArrayList<Athletes>();
+	private ArrayList<Officials> offics = new ArrayList<Officials>();
 	private Athletes predictWinner;
 	private List<AbstractGame> games = new ArrayList<AbstractGame>();
 	private	String info = new String("");    
@@ -105,6 +107,10 @@ public class Driver {
 		
 		Athletes realWinner = aths.get(0);
 		System.out.println("the realWinner is "+realWinner);
+		
+		if(predictWinner == null){//用户没有进行预测 所以不执行下面的代码
+			return;
+		}
 		if(predictWinner.getAthID().equals(realWinner.getAthID())){
 			System.out.println("Congratulations! your predict is correct");
 		}else{
@@ -121,7 +127,7 @@ public class Driver {
 		System.out.println(" now has "+games.size()+" games");
 		for(AbstractGame game : games){
 		  List<Athletes> players = new ArrayList<Athletes>();
-		  if(game instanceof Swimming){
+		  if(game instanceof Swimming){ //如果是游泳
 			  players.addAll(swimmingAths);
 		  }
 		  if(game instanceof Running){
@@ -130,7 +136,7 @@ public class Driver {
 		  if(game instanceof Cycling){
 			  players.addAll(cyclingAths);
 		  }
-		  players.addAll(superAths);
+		  players.addAll(superAths);    
 		  game.setAthlets(players);
 		  game.runGame();
 	    }
@@ -154,7 +160,23 @@ public class Driver {
 			gameType = GameEnum.getGameByIndex(gameIndex);
 		}
 
+		
+		info = "please select a offic for this game:\n";
+		int i=1;
+		for(Officials offic : offics){
+			info += (i++)+ " : " + offic + "\n";
+		}
+		System.out.println(info);
+		int input = getKeyboard().nextInt();
+		while(input > offics.size() || input<1){
+			System.out.println(info);
+			input = getKeyboard().nextInt();
+		}
+		Officials selOffic = offics.get(input-1);
+		System.out.println("you have select the offic: "+selOffic);
+		
 		AbstractGame game = GameFactory.createAGame(gameType);
+		game.setOffi(selOffic);
 		System.out.println("you selected the game " +game.getGameName() + ", id:"+game.getGameId());
 		games.add(game);
 	}
@@ -197,6 +219,31 @@ public class Driver {
 		 }
 		 System.out.println("");
 	}
+	
+	
+	/**
+	 * 加载裁判
+	 */
+	public void loadOffics(){
+		
+		  String content = FileUtils.readFile("offis.txt");
+		  String[] lines = content.split(";");	
+		  for(String line : lines){
+			 String[] values = line.split(" ");
+			  
+			 Officials offic = new Officials(values[0], values[1], Integer.parseInt(values[2]),
+					 values[3], "");
+			 
+			 offics.add(offic);
+		  }
+		  
+		 System.out.println("there are "+offics.size()+" officials");
+		 for(Officials offic : offics){
+			System.out.println(offic);
+		 }
+		 System.out.println("");
+	}
+	
 	
     /**
      * 预测胜利者

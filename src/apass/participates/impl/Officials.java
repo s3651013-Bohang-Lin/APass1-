@@ -51,7 +51,10 @@ public class Officials extends Participates {
 			List<Athletes> athletes = game.getAthlets();
 			Map<String, Double> athletsSecondResult = game.getAthletsSecondResult();
 			for(Athletes ath : athletes){
-			    double seconds = athletsSecondResult.get(ath.getAthID());
+			    Double seconds = athletsSecondResult.get(ath.getAthID());
+			    if(seconds == null){//如果这个运动员没有成绩 则可能是游戏未运行或其他原因 该场比赛不统计分数
+			    	continue;
+			    }
 			    int ranking = 1; //名次 默认第一名
 			    for(Entry<String, Double> entry : athletsSecondResult.entrySet()){
 			    	if(entry.getKey() == ath.getAthID()){
@@ -75,4 +78,15 @@ public class Officials extends Participates {
 			}
 			
 		}
+		
+	    public String getDetails()
+	    {
+			return "ID:" + this.getOffiID() + " Name:" + this.getOffiName() + "  age:" + this.getAge()
+			+ " state:" + this.getOffiState();
+	    }
+	    
+	    @Override
+	    public String toString(){
+	    	return getDetails();
+	    }
 }

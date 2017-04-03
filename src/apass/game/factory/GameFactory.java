@@ -12,7 +12,7 @@ import apass.game.impl.Swimming;
 /**
  * 游戏工厂 因为游戏可以选择多个 每次选则同一种游戏则id需要变化 如游泳S01 S02
  * 所以通过工厂类进行游戏创建
- * @author lkr
+ * @author Bohang Lin
  *
  */
 public class GameFactory {

@@ -14,6 +14,7 @@ public class Ozlympic {
 	static{
 		driver = new Driver();
 		driver.loadPlayers();
+		driver.loadOffics();
 	}
 	
 	public static void main(String[] args) {
